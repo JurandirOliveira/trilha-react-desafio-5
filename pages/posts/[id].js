@@ -23,27 +23,33 @@ export default function PostPage({
   posts,
   globalData,
 }) {
+
   return (
     <Layout>
       <SEO
-        title={`${posts.title} - ${globalData.name}`}
-        description={posts.description}
+        title={`${posts[0].title} - ${globalData.name}`}
+        description={posts[0].description}
       />
       <Header name={globalData.name} />
       <article className="px-6 md:px-0">
         <header>
           <h1 className="text-3xl md:text-5xl dark:text-white text-center mb-12">
-            {posts?.title}
+          {posts[0]?.title}
           </h1>
-          {posts?.description && (
-            <p className="text-xl mb-4">{posts?.description}</p>
+          {posts[0]?.description && (
+            <p className="text-xl mb-4">{posts[0]?.description}</p>
           )}
         </header>
         <main>
           <article className="prose dark:prose-dark">
-            {posts.body}
+            {posts[0].body}
           </article>
         </main>
+        <Link
+          as={`/`}
+          href={`/`}
+        ><p style={{marginTop: 40, cursor:'Pointer', width:50}}>Voltar</p>
+          </Link>
       </article>
       <Footer copyrightText={globalData.footerText} />
       <GradientBackground

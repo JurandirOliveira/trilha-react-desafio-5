@@ -12,6 +12,10 @@ h6 {
   font-family: var(--font-primary);
 }
 
+li {
+  margin-bottom: 15px;
+}
+
 body {
   font-family: var(--font-secondary);
 }
